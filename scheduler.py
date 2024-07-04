@@ -1,6 +1,6 @@
 import pywhatkit as kit
 import os
-import pyautogui as pg
+# import pyautogui as pg
 
 # os.environ['DISPLAY'] = ':0'
 
