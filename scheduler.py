@@ -1,9 +1,6 @@
 import pywhatkit as kit
-import pyautogui as pg
-# import os
 from xvfbwrapper import Xvfb
-
-# os.environ['DISPLAY'] = ':0'
+import os
 
 def message_scheduler(number, msg, h, m):
     phone_number = number
@@ -14,8 +11,14 @@ def message_scheduler(number, msg, h, m):
     # Start virtual display
     vdisplay = Xvfb()
     vdisplay.start()
-
+    
     try:
+        # Set the DISPLAY environment variable
+        os.environ['DISPLAY'] = ':0'
+        
+        # Adjust permissions
+        os.system("mkdir -p /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix")
+        
         # Schedule the message
         kit.sendwhatmsg(phone_number, message, hour, minute, 30)
     finally:
