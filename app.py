@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from scheduler import message_scheduler
+from scheduler_temp import message_scheduler
 
 app = Flask(__name__)
 CORS(app)

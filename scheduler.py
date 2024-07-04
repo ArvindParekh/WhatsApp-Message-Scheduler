@@ -2,7 +2,7 @@ import pywhatkit as kit
 import os
 import pyautogui as pg
 
-os.environ['DISPLAY'] = ':0'
+# os.environ['DISPLAY'] = ':0'
 
 def message_scheduler(number, msg, h, m):
     phone_number = number
