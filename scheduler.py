@@ -50,9 +50,17 @@ import pyautogui as pg
 import pywhatkit as w
 import time
 import pyautogui
+from xvfbwrapper import Xvfb
 import keyboard as k
-w.sendwhatmsg("+917283820013", 'hi', 3, 43)
-pyautogui.click(1050, 950)
 
-time.sleep(2)
-k.press_and_release('enter')
+# Start virtual display
+vdisplay = Xvfb()
+vdisplay.start()
+
+try:
+    w.sendwhatmsg("+917283820013", 'hi', 3, 43)
+    pyautogui.click(1050, 950)
+    time.sleep(2)
+    k.press_and_release('enter')
+finally:
+    vdisplay.stop()
