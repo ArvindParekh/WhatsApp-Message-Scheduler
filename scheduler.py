@@ -4,16 +4,17 @@ import pyautogui as pg
 
 os.environ['DISPLAY'] = ':0'
 
-def message_scheduler():
-    phone_number = "+917283820013"
-    message = "hello hello"
-    hour = 4
-    minute = 11
+def message_scheduler(number, msg, h, m):
+    phone_number = number
+    message = msg
+    hour = int(h)
+    minute = int(m)
     
+    # print(phone_number, message, int(hour), int(minute))
     kit.sendwhatmsg(phone_number, message, hour, minute, 30)
         
     
-message_scheduler()
+# message_scheduler()
 
 
 # import pywhatkit as w
